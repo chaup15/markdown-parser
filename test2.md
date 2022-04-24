@@ -1,3 +1,3 @@
 # Test
 
-[[Link](link.com)]
+[Link](page.com)
