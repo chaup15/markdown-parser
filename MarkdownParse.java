@@ -32,8 +32,14 @@ public class MarkdownParse {
             if (closeParen == -1){
                 break;
             }
-            toReturn.add(markdown.substring(openParen + 1, closeParen));
-            currentIndex = closeParen + 1;
+            String link = markdown.substring(openParen + 1, closeParen);
+            currentIndex = closeBracket + 1;
+            if (link.contains(" ")){
+                continue;
+            }
+            
+            toReturn.add(link);
+            
             
         }
         
