@@ -28,17 +28,17 @@ public class MarkdownParseTest {
 
     @Test
     public void test2() throws IOException{
-        Path fileName = Path.of("newtest-file.md");
+        Path fileName = Path.of("test.md");
         String content = Files.readString(fileName);
         ArrayList<String> test = MarkdownParse.getLinks(content);
 
 
-        assertEquals(List.of("https://postimg.cc/wt1tmXqk"), test);
+        assertEquals(List.of("https://link.com"), test);
     }
 
     @Test
     public void test3() throws IOException{
-        Path fileName = Path.of("test-file2.md");
+        Path fileName = Path.of("test2.md");
         String content = Files.readString(fileName);
         ArrayList<String> test = MarkdownParse.getLinks(content);
 
@@ -48,11 +48,11 @@ public class MarkdownParseTest {
 
     @Test
     public void test4() throws IOException{
-        Path fileName = Path.of("test-file3.md");
+        Path fileName = Path.of("test3.md");
         String content = Files.readString(fileName);
         ArrayList<String> test = MarkdownParse.getLinks(content);
 
 
-        assertEquals(List.of(), test);
+        assertEquals(List.of("page.com"), test);
     }
 }
