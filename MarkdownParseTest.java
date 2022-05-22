@@ -56,13 +56,34 @@ public class MarkdownParseTest {
         assertEquals(List.of("page.com"), test);
     }
 
-    // @Test
-    // public void test5() throws IOException{
-    //     Path fileName = Path.of("test-file8.md");
-    //     String content = Files.readString(fileName);
-    //     ArrayList<String> test = MarkdownParse.getLinks(content);
+    @Test
+    public void test5() throws IOException{
+        Path fileName = Path.of("lab-report-test1.md");
+        String content = Files.readString(fileName);
+        ArrayList<String> test = MarkdownParse.getLinks(content);
 
 
-    //     assertEquals(List.of(), test);
-    // }
+        assertEquals(List.of("`google.com", "google.com", "ucsd.edu"), test);
+    }
+
+    @Test
+    public void test6() throws IOException{
+        Path fileName = Path.of("lab-report-test2.md");
+        String content = Files.readString(fileName);
+        ArrayList<String> test = MarkdownParse.getLinks(content);
+
+
+        assertEquals(List.of("a.com(())", "example.com"), test);
+    }
+
+    @Test
+    public void test7() throws IOException{
+        Path fileName = Path.of("lab-report-test3.md");
+        String content = Files.readString(fileName);
+        ArrayList<String> test = MarkdownParse.getLinks(content);
+
+
+        assertEquals(List.of("https://sites.google.com/eng.ucsd.edu/cse-15l-spring-2022/schedule"), test);
+    }
+    
 }
