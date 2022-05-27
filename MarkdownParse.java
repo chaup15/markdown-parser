@@ -32,7 +32,7 @@ public class MarkdownParse {
             if (closeParen == -1){
                 break;
             }
-            String link = markdown.substring(openParen + 1, closeParen);
+            String link = markdown.substring(openParen + 1, closeParen).trim();
             currentIndex = closeBracket + 1;
             if (link.contains(" ")){
                 continue;

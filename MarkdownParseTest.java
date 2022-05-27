@@ -73,7 +73,7 @@ public class MarkdownParseTest {
         ArrayList<String> test = MarkdownParse.getLinks(content);
 
 
-        assertEquals(List.of("a.com(())", "example.com"), test);
+        assertEquals(List.of("a.com", "a.com(())", "example.com"), test);
     }
 
     @Test
@@ -83,7 +83,7 @@ public class MarkdownParseTest {
         ArrayList<String> test = MarkdownParse.getLinks(content);
 
 
-        assertEquals(List.of("https://sites.google.com/eng.ucsd.edu/cse-15l-spring-2022/schedule"), test);
+        assertEquals(List.of("https://www.twitter.com", "https://sites.google.com/eng.ucsd.edu/cse-15l-spring-2022/schedule", "https://cse.ucsd.edu/"), test);
     }
     
 }
